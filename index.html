@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2b1f5c">
+  <title>Happy Birthday ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div id="balloons" aria-hidden="true"></div>
+
+  <!-- STAGE 1: INTRO GATE -->
+  <section id="gate" class="gate">
+    <button id="giftBtn" class="gift" aria-label="Unwrap your surprise">
+      <span class="gift-lid"></span>
+      <span class="gift-box"></span>
+      <span class="gift-glow"></span>
+    </button>
+    <p class="gate-text">A little magic awaits you, <span class="name">My Princess</span>...<br>Tap to unwrap your surprise! ✨🎁</p>
+  </section>
+
+  <main id="main" class="main hidden">
+    <!-- STAGE 2: WISHING STAGE -->
+    <section class="stage" id="stage2">
+      <h1 class="shimmer-title">Happy Birthday,<br><span class="name">My Princess</span>!</h1>
+      <p class="date shimmer-title small">— <span id="dateText">October 31st</span> —</p>
+      <p class="subtitle">May today be as magical and radiant as your smile.</p>
+
+      <div class="cake-wrap" id="cakeWrap">
+        <div class="flame" id="flame"><i class="f3"></i><i class="f2"></i><i class="f1"></i></div>
+        <svg class="cake" viewBox="0 0 300 280" role="img" aria-label="Three tier birthday cake">
+          <defs>
+            <linearGradient id="gPink" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc2d9"/><stop offset="1" stop-color="#ff8fb8"/></linearGradient>
+            <linearGradient id="gCream" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff7ec"/><stop offset="1" stop-color="#ffe3c8"/></linearGradient>
+            <linearGradient id="gLav" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2d4ff"/><stop offset="1" stop-color="#b9a2f2"/></linearGradient>
+          </defs>
+          <ellipse cx="150" cy="262" rx="140" ry="14" fill="#fff" opacity=".55"/>
+          <rect x="24" y="190" width="252" height="70" rx="14" fill="url(#gPink)"/>
+          <path d="M24 204 q10 24 21 0 q10 30 22 0 q10 20 21 0 q11 32 22 0 q10 22 21 0 q11 28 22 0 q10 18 21 0 q11 30 22 0 q10 20 21 0 q8 12 11 -4 v-14 h-228z" fill="#fff"/>
+          <rect x="58" y="128" width="184" height="64" rx="13" fill="url(#gLav)"/>
+          <path d="M58 142 q9 22 19 0 q10 28 20 0 q10 18 20 0 q10 30 20 0 q10 20 20 0 q10 26 20 0 q9 16 17 -2 v-12 h-136z" fill="#fff"/>
+          <rect x="88" y="78" width="124" height="52" rx="12" fill="url(#gCream)"/>
+          <path d="M88 90 q8 20 17 0 q9 26 18 0 q9 16 18 0 q9 28 18 0 q9 18 17 0 v-10 h-88z" fill="#ff9ec3"/>
+          <rect x="145" y="48" width="10" height="32" rx="3" fill="#ffd36e"/>
+          <path d="M145 56 l10 6 M145 66 l10 6" stroke="#fff" stroke-width="3"/>
+          <g fill="#ff4d6d"><circle cx="100" cy="76" r="8"/><circle cx="200" cy="76" r="8"/><circle cx="76" cy="126" r="8"/><circle cx="224" cy="126" r="8"/><circle cx="46" cy="188" r="8"/><circle cx="254" cy="188" r="8"/><circle cx="150" cy="188" r="8"/></g>
+          <g fill="#3fbf7f"><path d="M96 70 l4 -4 l4 4z"/><path d="M196 70 l4 -4 l4 4z"/><path d="M72 120 l4 -4 l4 4z"/><path d="M220 120 l4 -4 l4 4z"/></g>
+          <g>
+            <rect x="110" y="104" width="8" height="3" rx="1.5" fill="#6ec6ff" transform="rotate(25 114 105)"/>
+            <rect x="170" y="108" width="8" height="3" rx="1.5" fill="#ffd36e" transform="rotate(-30 174 109)"/>
+            <rect x="130" y="162" width="8" height="3" rx="1.5" fill="#ff8fb8" transform="rotate(40 134 163)"/>
+            <rect x="180" y="168" width="8" height="3" rx="1.5" fill="#6ec6ff" transform="rotate(-20 184 169)"/>
+            <rect x="90" y="230" width="8" height="3" rx="1.5" fill="#b9a2f2" transform="rotate(30 94 231)"/>
+            <rect x="200" y="236" width="8" height="3" rx="1.5" fill="#ffd36e" transform="rotate(-35 204 237)"/>
+            <rect x="140" y="232" width="8" height="3" rx="1.5" fill="#fff" transform="rotate(15 144 233)"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="actions">
+        <button id="blowBtn" class="btn glass gold">Make a Wish &amp; Tap to Blow 🎂</button>
+      </div>
+      <p id="wishMsg" class="wish-msg">Wish granted! Scroll down to explore your memories ✨</p>
+    </section>
+
+    <!-- STAGE 3: GALLERY -->
+    <section class="stage gallery" id="stage3">
+      <div class="fairy-lights" aria-hidden="true"></div>
+      <h2 class="shimmer-title mid">Precious Moments Together 📸</h2>
+      <div class="polaroids">
+        <figure class="polaroid reveal" data-tilt data-tilt-max="14" data-tilt-glare data-tilt-max-glare="0.35" style="--rot:-5deg">
+          <span class="pin"></span>
+          <!-- THAY LINK ẢNH CỦA BẠN Ở ĐÂY -->
+          <img src="assets/img/1.jpg" alt="Memory 1" loading="lazy">
+          <figcaption>A present you give me when my birthday and i love that ✨</figcaption>
+        </figure>
+        <figure class="polaroid reveal" data-tilt data-tilt-max="14" data-tilt-glare data-tilt-max-glare="0.35" style="--rot:4deg">
+          <span class="pin"></span>
+          <!-- THAY LINK ẢNH CỦA BẠN Ở ĐÂY -->
+          <img src="assets/img/2.jpg" alt="Memory 2" loading="lazy">
+          <figcaption>when u feel laze (i love your art so much)</figcaption>
+        </figure>
+        <figure class="polaroid reveal" data-tilt data-tilt-max="14" data-tilt-glare data-tilt-max-glare="0.35" style="--rot:-3deg">
+          <span class="pin"></span>
+          <!-- THAY LINK ẢNH CỦA BẠN Ở ĐÂY -->
+          <img src="assets/img/3.jpg" alt="Memory 3" loading="lazy">
+          <figcaption>this picture remind me of you</figcaption>
+        </figure>
+      </div>
+      <p class="hint">Double-click (or double-tap) a photo for a burst of hearts 💗</p>
+    </section>
+
+    <!-- STAGE 4: LETTER -->
+    <section class="stage letter-stage" id="stage4">
+      <button id="seal" class="envelope" aria-label="Tap the seal to read your letter">
+        <span class="env-flap"></span>
+        <span class="wax">♥</span>
+      </button>
+      <p id="sealHint" class="seal-hint">Tap the seal to read your letter 💌</p>
+      <article id="letter" class="letter glass">
+        <p id="letterText" class="letter-text" aria-live="polite"></p>
+        <p id="signature" class="signature">With all my love, <span id="fromName">Your Name</span></p>
+      </article>
+    </section>
+  </main>
+
+  <nav id="controlBar" class="control-bar glass hidden" aria-label="Magic control bar">
+    <button data-act="fireworks">Grand Fireworks 🎆</button>
+    <button data-act="hearts">Heart Shower 💖</button>
+    <button data-act="relight">Relight Candle 🕯️</button>
+    <button data-act="music" id="musicBtn">Music: ON 🎵</button>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
