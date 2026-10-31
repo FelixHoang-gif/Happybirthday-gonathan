@@ -6,7 +6,7 @@ const CONFIG = {
   from: 'Felix',
   date: 'October 31st',
   letter:
-`Dearest ${'{Gonathan}'},
+`Dearest ${'Gonathan'},
 
 Happy Birthday! 🎂💗 I hope your special day is filled with happiness, laughter, and love. May you become happier every day and achieve all your dreams. Thank you for being in my life and for always being there when I feel sad. I hope we can stay by each other's side for a long, long time. 🫶🏻
 
